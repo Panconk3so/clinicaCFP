@@ -1,0 +1,36 @@
+@model List<clinicaCFP.Models.RegistrarCita>
+
+<h2>Lista de Pacientes</h2>
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Dni</th>
+            <th>Nombre</th>
+            <th>Apellido Paterno</th>
+            <th>Correo</th>
+            <th>Número de teléfono</th>
+            <th>Fecha Cita Deseada </th>
+            <!-- Agrega aquí las otras columnas que quieras mostrar -->
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cita in Model)
+        {
+            <tr>
+                <td>@cita.Id</td>
+                <td>@cita.DNI</td>
+                <td>@cita.Nombre</td>
+                <td>@cita.ApellidoPaterno</td>
+                <td>@cita.Email </td>
+                <td>@cita.Phone </td>
+                <td>@cita.FechaCitaDeseada </td>
+                
+                <!-- Agrega aquí las otras columnas que quieras mostrar -->
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,19 @@
+body{
+    background: #D9D9D9;
+    background: linear-gradient(to center, gray, white);
+}
+
+.bg{
+    background-image: url(https://media.discordapp.net/attachments/1169762805902221397/1169843928938332231/bar_login.png?ex=6556e10f&is=65446c0f&hm=967d484b425edd82943044df6d9478cbca62b0a4aa98a3cd218447d77bf6f60f&=&width=409&height=409);
+    background-position: center center;
+    background-size: 145px;
+}
+
+.ltm{
+    font-family: "Comic Sans MS";
+    font-weight: bold;
+}
+
+.lts{
+    font-family: "Comic Sans MS";
+}

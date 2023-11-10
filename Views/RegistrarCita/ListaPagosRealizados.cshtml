@@ -1,0 +1,27 @@
+@model List<clinicaCFP.Models.Pago>
+
+<h2>Lista de Pagos Realizados</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Fecha de Pago</th>
+            <th>Nombre en la Tarjeta</th>
+            <th>Monto Total</th>
+            <!-- Agrega aquí otras columnas según tus necesidades -->
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var pago in Model)
+        {
+            <tr>
+                <td>@pago.Id</td>
+                <td>@pago.PaymentDate</td>
+                <td>@pago.NombreTarjeta</td>
+                <td>@pago.MontoTotal</td>
+                <!-- Agrega aquí otras columnas según tus necesidades -->
+            </tr>
+        }
+    </tbody>
+</table>

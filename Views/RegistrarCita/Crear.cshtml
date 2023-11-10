@@ -1,0 +1,77 @@
+@model clinicaCFP.Models.RegistrarCita
+
+<h2>Crear Cita</h2>
+
+<form asp-action="Crear" method="post">
+    <div class="form-group">
+        <label asp-for="Nombre"></label>
+        <input asp-for="Nombre" class="form-control" />
+        <span asp-validation-for="Nombre" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ApellidoPaterno"> Apellido Paterno</label>
+        <input asp-for="ApellidoPaterno" class="form-control" />
+        <span asp-validation-for="ApellidoPaterno" class="text-danger"></span>
+    </div>
+
+      <div class="form-group">
+        <label asp-for="ApellidoMaterno">Apellido Materno</label>
+        <input asp-for="ApellidoMaterno" class="form-control" />
+        <span asp-validation-for="ApellidoMaterno" class="text-danger"></span>
+    </div>
+    
+
+      <div class="form-group">
+        <label asp-for="Email">Email</label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Phone">Phone</label>
+        <input asp-for="Phone" class="form-control" />
+        <span asp-validation-for="Phone" class="text-danger"></span>
+    </div>
+    
+
+      <div class="form-group">
+        <label asp-for="FechaNacimiento">Fecha de Nacimiento</label>
+        <input asp-for="FechaNacimiento" type="date" class="form-control" />
+        <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="DNI"></label>
+        <input asp-for="DNI" class="form-control" />
+        <span asp-validation-for="DNI" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Departamento"></label>
+        <input asp-for="Departamento" class="form-control" />
+        <span asp-validation-for="Departamento" class="text-danger"></span>
+    </div>
+
+   <div class="form-group">
+        <label>Especialidades:</label>
+        <input type="checkbox" name="Especialidad" value="Trastorno" /> Trastorno
+        <input type="checkbox" name="Especialidad" value="Estres" /> Estrés
+        <input type="checkbox" name="Especialidad" value="Terapia" /> Terapia
+    </div>
+   
+    
+   <br>
+
+    <div class="form-group">
+        <button type="submit" id="btnSubmit" class="btn btn-primary">Guardar Cita</button>
+    </div>
+</form>
+
+<div id="confirmationSection" style="display: none;">
+    <h3>¡Cita registrada con éxito!</h3>
+    <p>Gracias por registrar la cita. La cita se ha guardado correctamente.</p>
+    <p>
+        <a asp-action="Crear" class="btn btn-success">Registrar otra cita</a>
+    </p>
+</div>

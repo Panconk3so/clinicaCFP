@@ -1,0 +1,41 @@
+<!-- Index.cshtml -->
+
+@model List<clinicaCFP.Models.RegistrarCita>
+
+<h2>Lista de Citas</h2>
+
+<p>
+    <a asp-action="Crear" class="btn btn-success">Crear Nueva Cita</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Dni</th>
+            <th>Nombre</th>
+            <th>Apellido Paterno</th>
+            <th>Especialidad</th>
+            <th>Precio</th>
+            <!-- Agrega aquí las otras columnas que quieras mostrar -->
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cita in Model)
+        {
+            <tr>
+                <td>@cita.Id</td>
+                <td>@cita.DNI</td>
+                <td>@cita.Nombre</td>
+                <td>@cita.ApellidoPaterno</td>
+                <td>@cita.Especialidad</td>
+                <td>@cita.Precio</td>
+                <td>
+                    <a asp-action="Pagar" asp-route-id="@cita.Id" class="btn btn-primary">Pagar</a>
+                    <a asp-action="Editar" asp-route-id="@cita.Id" class="btn btn-warning">Editar</a>
+                    <a asp-action="Eliminar" asp-route-id="@cita.Id" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

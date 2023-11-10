@@ -1,0 +1,33 @@
+@model clinicaCFP.Models.RegistrarCita
+
+<h2>Pagar Cita</h2>
+
+<div>
+    <p>Información de la Cita: @Model.Especialidad</p>
+    <p>ID: @Model.Id</p>
+    <p>Nombre: @Model.Nombre</p>
+    <p>Apellido Paterno: @Model.ApellidoPaterno</p>
+    <p>Precio: S/@Model.Precio</p>
+
+    <!-- Formulario de pago -->
+    <form method="post" action="@Url.Action("ProcesarPago", "Pago", new { citaId = Model.Id })">
+        <div>
+            <label for="NombreTarjeta">Nombre en la Tarjeta:</label>
+            <input type="text" id="NombreTarjeta" name="NombreTarjeta" required>
+        </div>
+        <div>
+            <label for="NumeroTarjeta">Número de Tarjeta:</label>
+            <input type="text" id="NumeroTarjeta" name="NumeroTarjeta" required>
+        </div>
+        <div>
+            <label for="DueDateYYMM">Fecha de Vencimiento (YY/MM):</label>
+            <input type="text" id="DueDateYYMM" name="DueDateYYMM" required>
+        </div>
+        <div>
+            <label for="Cvv">CVV:</label>
+            <input type="text" id="Cvv" name="Cvv" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Pagar Cita</button>
+    </form>
+</div>

@@ -1,0 +1,72 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Iniciar Sesión";
+}
+
+<link rel="stylesheet" href="~/css/login.css">
+
+<body>
+<div class="container w-75 mt-5 rounded shadow">
+    <div class="row align-items-stretch">
+        <div class="col bg d-none d-lg-block col-md-5 col-lg-5 col-xl-6 rounded">
+
+        </div>
+
+        <!-- Icono -->
+        <div class="col bg-white p-5 rounded-end">
+            <div class="text-center">
+                <img src="https://media.discordapp.net/attachments/1169762805902221397/1169786747115282542/CFP_Tab.png?ex=6556abce&is=654436ce&hm=e9d1b9c43f357d5ed006f4a49077902a956cb0a3dc2712404ac7a24579474b0b&=&width=254&height=110" width="220" alt="">
+            </div>
+
+            <h2 class="fw-bold text-center py-5 ltm">Iniciar Sesión</h2>
+
+        <!-- Log-In -->
+        <section>
+            <form id="account" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                <div class="form-floating mb-3">
+                    <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
+                    <label asp-for="Input.Email" class="form-label lts">Correo Electrónico</label>
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="password" />
+                    <label asp-for="Input.Password" class="form-label lts">Contraseña</label>
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                <div class="checkbox mb-3">
+                    <label asp-for="Input.RememberMe" class="form-label">
+                        <input class="form-check-input" asp-for="Input.RememberMe" />
+                        @Html.DisplayNameFor(m => m.Input.RememberMe)
+                    </label>
+                </div>
+                <div>
+                    <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-danger">Iniciar Sesión</button>
+                </div>
+                <p>  
+
+                </p>
+                <div>
+                    <p>
+                        <a id="forgot-password" asp-page="./ForgotPassword">Olvidaste tu contraseña?</a>
+                    </p>
+                    <p>
+                        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">¿Eres nuevo/a aquí?</a>
+                    </p>
+                    <p>
+                        <a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Reenviar correo para confirmación!</a>
+                    </p>
+                </div>
+            </form>
+
+            <p>© 2023 CFP Salud Mental. Todos los derechos reservados.</p>
+        </section>
+    </div>
+</div>
+</body>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
